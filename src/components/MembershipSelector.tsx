@@ -30,7 +30,7 @@ const  MembershipSelector = () => {
     executive: {
       title: 'Assinatura Executiva',
       subtitle: 'Melhor Valor e Benefícios Exclusivos',
-      price: '$130/ano',
+      price: '$130/yr',
       tax: 'Mais impostos aplicáveis',
       button: 'Comece a Economizar e Ganhar',
       benefits: {
@@ -79,7 +79,7 @@ const  MembershipSelector = () => {
     goldStar: {
       title: 'Assinatura Gold Star',
       subtitle: 'Valor do Dia a Dia',
-      price: '$65/ano',
+      price: '$65/yr',
       tax: 'Mais impostos aplicáveis',
       button: 'Comece a Economizar',
       benefits: {
