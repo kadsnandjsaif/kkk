@@ -19,17 +19,17 @@ const ComingSoonLocations = () => {
   const targetDate = new Date('25 Dezembro 2025 00:00:00').getTime();
 
   const locations: Location[] = [
-    { city: 'Rimouski, QC', date: 'Agosto 2025' },
-    { city: 'The Villages, FL', date: 'Agosto 2025' },
-    { city: 'N Guadalajara, MX', date: 'Agosto 2025' },
-    { city: 'Richland, WA', date: 'Agosto 2025' },
-    { city: 'Allen, TX', date: 'Agosto 2025' },
-    { city: 'E Newmarket, ON', date: 'Agosto 2025' },
-    { city: 'Spring Valley, NV', date: 'Agosto 2025' },
-    { city: 'Mississauga, ON Business Center', date: 'Outubro 2025' },
-    { city: 'Frutiport, MI', date: 'Outubro 2025' },
-    { city: 'Mechanicsburg, PA', date: 'Outubro 2025' },
-    { city: 'Indian Land, SC', date: 'Outubro 2025' }
+    { city: 'Rimouski, QC', date: 'Agosto 2026' },
+    { city: 'The Villages, FL', date: 'Agosto 2026' },
+    { city: 'N Guadalajara, MX', date: 'Agosto 2026' },
+    { city: 'Richland, WA', date: 'Agosto 2026' },
+    { city: 'Allen, TX', date: 'Agosto 2026' },
+    { city: 'E Newmarket, ON', date: 'Agosto 2026' },
+    { city: 'Spring Valley, NV', date: 'Agosto 2026' },
+    { city: 'Mississauga, ON Business Center', date: 'Outubro 2026' },
+    { city: 'Frutiport, MI', date: 'Outubro 2026' },
+    { city: 'Mechanicsburg, PA', date: 'Outubro 2026' },
+    { city: 'Indian Land, SC', date: 'Outubro 2026' }
   ];
 
   useEffect(() => {
