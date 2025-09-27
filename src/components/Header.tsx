@@ -192,7 +192,7 @@ const Header = () => {
                 Hagase socio
               </Link>
               <Link href="./location" className="text-lg font-bold hover:underline transition-colors">
-                Test
+                localização
               </Link>
             </nav>
           </div>
