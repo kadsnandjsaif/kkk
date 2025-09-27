@@ -67,6 +67,48 @@ const TestimonialSlider = () => {
       username: "@economiza_sempre",
       comment: "Os preços da Costco são imbatíveis! Economizo centenas por mês sem abrir mão da qualidade."
     },
+    {
+      id: 7,
+      image: "/slide1.jpg",
+      avatar: "/avatar.jpg",
+      username: "@takecoweer",
+      comment: "A Costco superou todas as minhas expectativas! Preços incríveis e qualidade excepcional em todos os produtos. Recomendo a todos!"
+    },
+    {
+      id: 8,
+      image: "/slide2.jpg",
+      avatar: "/avatar.jpg",
+      username: "@membro_feliz",
+      comment: "Melhor custo-benefício do mercado! A assinatura executiva vale cada centavo com os benefícios exclusivos."
+    },
+    {
+      id: 9,
+      image: "/slide3.jpg",
+      avatar: "/avatar.jpg",
+      username: "@familia_costco",
+      comment: "Fazemos todas as nossas compras mensais aqui. Qualidade garantida e atendimento impecável!"
+    },
+    {
+      id: 10,
+      image: "/slide4.jpg",
+      avatar: "/avatar.jpg",
+      username: "@economiza_sempre",
+      comment: "Os preços da Costco são imbatíveis! Economizo centenas por mês sem abrir mão da qualidade."
+    },
+    {
+      id: 11,
+      image: "/slide5.jpg",
+      avatar: "/avatar.jpg",
+      username: "@cliente_satisfeito",
+      comment: "Experiência de compra única! Produtos frescos, variedade enorme e serviços excelentes."
+    },
+        {
+      id: 12,
+      image: "/slide4.jpg",
+      avatar: "/avatar.jpg",
+      username: "@economiza_sempre",
+      comment: "Os preços da Costco são imbatíveis! Economizo centenas por mês sem abrir mão da qualidade."
+    },
   ];
 
   // Тексты на португальском
@@ -110,29 +152,30 @@ const TestimonialSlider = () => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    grabCursor: true,
-    slidesPerView: 'auto' as const,
+  
+    loop: true,
+     slidesPerView: 5,
     spaceBetween: 20,
     breakpoints: {
       // 1400px и выше - показываем 5 слайдов
       1400: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
       // 1200px - 1399px - показываем 4 слайда
       1200: {
-        slidesPerView: 4,
+        slidesPerView: 5,
       },
       // 992px - 1199px - показываем 3 слайда
       992: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
       // 768px - 991px - показываем 2 слайда
       768: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       },
       // До 767px - показываем 1 слайд
       320: {
-        slidesPerView: 1,
+        slidesPerView: 2,
       }
     },
     onSwiper: setSwiperInstance,
