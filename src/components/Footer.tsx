@@ -150,7 +150,7 @@ const Footer = () => {
                 <ul className="space-y-2 pt-2">
                   {column.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <span className="hover:text-blue-600 cursor-pointer transition-colors text-base block py-1">
+                      <span className="hover:border-b-1 cursor-pointer transition-colors text-base block py-1">
                         {link}
                       </span>
                     </li>
@@ -203,7 +203,7 @@ const Footer = () => {
             {footerData.legal.map((link, index) => (
               <span 
                 key={index}
-                className="hover:text-blue-600 cursor-pointer transition-colors text-sm"
+                className="hover:border-b-1 cursor-pointer transition-colors text-sm"
               >
                 {link}
               </span>
