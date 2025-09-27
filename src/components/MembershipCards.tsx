@@ -176,7 +176,7 @@ const MembershipCards = () => {
             {bottomCards.map((card) => (
               <div
                 key={card.id}
-                className=" rounded-2xl p-4 xl:p-4 flex flex-col text-center min-h-[100px] items-center justify-items-stretch hover:shadow-lg transition-shadow"
+                className=" rounded-2xl p-4 xl:p-4 flex flex-col text-center min-h-[100px] items-center justify-items-stretch "
               >
                 <div className="w-50 h-50 md:w-35 md:h-35 xl:w-45 xl:h-45 mb-4 relative">
                   <Image

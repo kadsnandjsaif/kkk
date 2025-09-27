@@ -198,10 +198,9 @@ const  MembershipSelector = () => {
   };
 
   return (
-    <div data-component="membership-selector" className="bg-blue-600">
+    <div data-component="membership-selector" className="bg-blue-600 lg:bg-[linear-gradient(to_bottom,_#0060a9_70%,_white_30%)]">
       <div className="relative w-full max-w-[1400px] mx-auto px-4 py-8">
         {/* Синий фон */}
-        <div className="absolute inset-0 bg-[#0060a9] -z-10 lg:h-1/2 h-full"></div>
         
         {/* Заголовок */}
         <div className="text-center mb-8">
@@ -327,15 +326,15 @@ const  MembershipSelector = () => {
         </div>
 
         {/* Переключатель типа членства */}
-        <div className="text-center flex flex-col border-1 border-black rounded-xl p-5 md:flex-row items-center justify-center bg-white max-w-[800px] mx-[auto] ">
+        <div className="text-center flex flex-col border-1 border-black rounded-xl p-5 md:flex-row items-center justify-center bg-blue-100 max-w-[800px] mx-[auto] ">
           <h3 className="text-lg font-semibold mr-4 mb-2 md:mb-0">Escolha o tipo de assinatura:</h3>
           <div className="flex justify-center space-x-4 flex flex-col md:flex-row">
             <button
               onClick={() => setMembershipType('personal')}
               className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                 membershipType === 'personal' 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                   ? 'bg-blue-200 text-blue-600 border-1' 
+                  : 'bg-gray-200 text-blue-600 border-1 hover:bg-blue-200 '
               }`}
             >
               Assinatura Pessoal
@@ -344,8 +343,8 @@ const  MembershipSelector = () => {
               onClick={() => setMembershipType('business')}
               className={`px-6 py-2 rounded-lg font-medium transition-colors ${
                 membershipType === 'business' 
-                  ? 'bg-blue-600 text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                   ? 'bg-blue-200 text-blue-600 border-1' 
+                  : 'bg-gray-200 text-blue-600 border-1 hover:bg-blue-200'
               }`}
             >
               Assinatura Empresarial

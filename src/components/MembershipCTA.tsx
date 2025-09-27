@@ -47,7 +47,7 @@ const MembershipCTA = () => {
         
         <button
           onClick={scrollToMembershipSelector}
-          className="bg-[#0053a1] hover:bg-[#004080] text-white font-bold py-4 px-8  text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="bg-[#0053a1] hover:bg-[#004080] text-white font-bold py-4 px-8  text-lg md:text-xl transition-all duration-300 transform "
         >
           Torne-se um Membro
         </button>

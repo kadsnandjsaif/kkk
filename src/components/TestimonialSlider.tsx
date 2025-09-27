@@ -110,15 +110,13 @@ const TestimonialSlider = () => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    loop: true,
     grabCursor: true,
-    centeredSlides: true,
     slidesPerView: 'auto' as const,
-    spaceBetween: 15,
+    spaceBetween: 20,
     breakpoints: {
       // 1400px и выше - показываем 5 слайдов
       1400: {
-        slidesPerView: 5,
+        slidesPerView: 4,
       },
       // 1200px - 1399px - показываем 4 слайда
       1200: {
