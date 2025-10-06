@@ -24,53 +24,43 @@ const  MembershipSelector = () => {
 
   // Тексты на португальском
   const texts = {
-    title: 'Junte-se à Costco',
-    subtitle: 'Já é membro da Costco? Renove sua assinatura.',
+    title: 'Junte-se a Costco ',
+    subtitle: 'Ainda não é membro da Costco? Compre sua assinatura agora mesmo.',
     
     executive: {
       title: 'Assinatura Executiva',
       subtitle: 'Melhor Valor e Benefícios Exclusivos',
-      price: '$130/yr',
-      tax: 'Mais impostos aplicáveis',
-      button: 'Comece a Economizar e Ganhar',
+      price: ' R$ 550 ',
+      tax: 'Para primeiros 10.000 sócios',
+      button: 'Começa a economizar e ganhar',
       benefits: {
         collapsed: [
-          'Recompensa Anual de 2%',
-          'NOVO! Horários de Compras para Membros Executivos',
-          'NOVO! Crédito Mensal de $10 no SameDay.Costco.com ou Costco via Instacart¹',
-          'Valor Adicional nos Serviços Costco',
-          'Compre Online e nas Lojas',
-          'Inclui 2 Cartões de Assinatura',
-          'Garantia de Satisfação de 100%'
+        'Preços exclusivos em produtos de alta qualidade',
+       "Ofertas e promoções especiais para membros",
+        'Recompensas e cashback em compras selecionadas',
+        'Viagens e experiências exclusivas, inclusive no exterior',
+       ' Acesso antecipado a lançamentos e eventos especiais'
         ],
         expanded: [
           {
-            title: 'Recompensa Anual de 2%',
+            title: 'Preços exclusivos em produtos de alta qualidade',
             description: 'Até $1.250 em compras elegíveis da Costco e Costco Travel. Aplicam-se Termos e Condições.'
           },
           {
-            title: 'NOVO! Horários de Compras para Membros Executivos',
+            title:  "Ofertas e promoções especiais para membros",
             description: 'Segunda a sexta: 9h – 10h\nSábado: 9h – 9:30h\nDomingo: 9h – 10h'
           },
           {
-            title: 'NOVO! Crédito Mensal de $10 no SameDay.Costco.com ou Costco via Instacart¹',
+            title: 'Recompensas e cashback em compras selecionadas',
             description: 'Receba um crédito mensal de $10 para uso em pedidos elegíveis de $150+ e receba seus favoritos do armazém diretamente em sua porta, em até 1 hora.'
           },
           {
-            title: 'Valor Adicional nos Serviços Costco',
+            title:'Viagens e experiências exclusivas, inclusive no exterior',
             description: 'Benefícios executivos e descontos em serviços selecionados da Costco'
           },
           {
-            title: 'Compre Online e nas Lojas',
+            title: ' Acesso antecipado a lançamentos e eventos especiais',
             description: 'Compre em todas as lojas Costco e online em Costco.com'
-          },
-          {
-            title: 'Inclui 2 Cartões de Assinatura',
-            description: 'Para você e para alguém da sua casa'
-          },
-          {
-            title: 'Garantia de Satisfação de 100%',
-            description: 'Cancelaremos e reembolsaremos sua assinatura a qualquer momento se você ficar insatisfeito'
           }
         ]
       }
@@ -79,48 +69,41 @@ const  MembershipSelector = () => {
     goldStar: {
       title: 'Assinatura Gold Star',
       subtitle: 'Valor do Dia a Dia',
-      price: '$65/yr',
-      tax: 'Mais impostos aplicáveis',
-      button: 'Comece a Economizar',
+      price: 'R$ 275',
+      tax: ' Para primeiros 10.000 sócios',
+      button: 'Começa a economizar e ganhar',
       benefits: {
         collapsed: [
-          'Recompensa Anual de 2%',
-          'Horários de Compras para Membros Executivos',
-          'Crédito Mensal de $10 no SameDay.Costco.com ou Costco via Instacart¹',
-          'Valor Adicional nos Serviços Costco',
-          'Compre Online e nas Lojas',
-          'Inclui 2 Cartões de Assinatura',
-          'Garantia de Satisfação de 100%'
+             'Preços exclusivos em produtos de alta qualidade',
+           ' Acesso antecipado a lançamentos e eventos especiais',
+
+             'Recompensas e cashback em compras selecionadas',
+           'Viagens e experiências exclusivas, inclusive no exterior',
+            "Ofertas e promoções especiais para membros"
+
         ],
         expanded: [
           {
-            title: 'Recompensa Anual de 2%',
+            title: 'Preços exclusivos em produtos de alta qualidade',
             description: 'Até $1.250 em compras elegíveis da Costco e Costco Travel. Aplicam-se Termos e Condições.'
           },
-          {
-            title: 'Horários de Compras para Membros Executivos',
-            description: 'Segunda a sexta: 9h – 10h\nSábado: 9h – 9:30h\nDomingo: 9h – 10h'
-          },
-          {
-            title: 'Crédito Mensal de $10 no SameDay.Costco.com ou Costco via Instacart¹',
-            description: 'Receba um crédito mensal de $10 para uso em pedidos elegíveis de $150+ e receba seus favoritos do armazém diretamente em sua porta, em até 1 hora.'
-          },
-          {
-            title: 'Valor Adicional nos Serviços Costco',
-            description: 'Benefícios executivos e descontos em serviços selecionados da Costco'
-          },
-          {
-            title: 'Compre Online e nas Lojas',
+           {
+            title: ' Acesso antecipado a lançamentos e eventos especiais',
             description: 'Compre em todas as lojas Costco e online em Costco.com'
           },
           {
-            title: 'Inclui 2 Cartões de Assinatura',
-            description: 'Para você e para alguém da sua casa'
+            title: 'Recompensas e cashback em compras selecionadas',
+            description: 'Receba um crédito mensal de $10 para uso em pedidos elegíveis de $150+ e receba seus favoritos do armazém diretamente em sua porta, em até 1 hora.'
           },
           {
-            title: 'Garantia de Satisfação de 100%',
-            description: 'Cancelaremos e reembolsaremos sua assinatura a qualquer momento se você ficar insatisfeito'
-          }
+            title:'Viagens e experiências exclusivas, inclusive no exterior',
+            description: 'Benefícios executivos e descontos em serviços selecionados da Costco'
+          },
+         
+          {
+            title:  "Ofertas e promoções especiais para membros",
+            description: 'Segunda a sexta: 9h – 10h\nSábado: 9h – 9:30h\nDomingo: 9h – 10h'
+          },
         ]
       }
     },
@@ -227,7 +210,7 @@ const  MembershipSelector = () => {
                   className="object-contain mb-4 md:mb-0 mr-0 md:mr-10"
                 />
                 <div className="w-[max-content] md:text-center">
-                  <div className="text-3xl font-bold text-gray-900">{texts.executive.price}</div>
+                  <div className=" text-3xl font-bold text-gray-900"><p className='flex text-xl'><p className='text-decoration: line-through'>R$ 1.100</p>ㅤpor ano por</p> {texts.executive.price}</div>
                   <div className="text-gray-600 text-sm">{texts.executive.tax}</div>
                 </div>
               </div>
@@ -238,7 +221,9 @@ const  MembershipSelector = () => {
                 </button>
               </div>
 
-              <div className={`transition-all duration-300 ${isExpanded ? 'max-h-[2000px]' : 'max-h-96'} overflow-hidden px-5`}>
+              <div className={`transition-all duration-300 ${isExpanded ? 'max-h-[2000px]' : 'max-h-120'} overflow-hidden px-5`}>
+                <p className='text-2xl text-gray-700 font-medium  '>Acesso Completo aos Benefícios da Costco!
+                    <br />Ao se tornar sócio, você aproveita: </p> <br />
                 <ul className="space-y-3 mb-4">
                   {(isExpanded ? texts.executive.benefits.expanded : texts.executive.benefits.collapsed).map((benefit, index) => (
                     <li key={index} className="flex items-start">
@@ -284,7 +269,7 @@ const  MembershipSelector = () => {
                   className="object-contain mb-4 md:mb-0 mr-0 md:mr-10"
                 />
                 <div className="w-[max-content] md:text-center">
-                  <div className="text-3xl font-bold text-gray-900">{currentRightCard.price}</div>
+                  <div className="text-3xl font-bold text-gray-900"><p className='flex text-xl'><p className='text-decoration: line-through'>R$ 550</p>ㅤpor ano por</p> {currentRightCard.price}</div>
                   <div className="text-gray-600 text-sm">{currentRightCard.tax}</div>
                 </div>
               </div>
@@ -296,6 +281,8 @@ const  MembershipSelector = () => {
               </div>
 
               <div className={`transition-all duration-300 ${isExpanded ? 'max-h-[2200px]' : 'max-h-140'} overflow-hidden px-5`}>
+                      <p className='text-2xl text-gray-700 font-medium '><p className='text-decoration: line-through '>Acesso Completo aos Benefícios da Costco!</p>
+                    Ao se tornar sócio, você aproveita: </p> <br />
                 <ul className="space-y-3 mb-2">
                   {(isExpanded ? currentRightCard.benefits.expanded : currentRightCard.benefits.collapsed).map((benefit, index) => (
                     <li key={index} className="flex items-start">

@@ -157,12 +157,12 @@ const MembershipCards = () => {
             {/* Текст с ценами */}
             <div className="mb-6">
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-                Por <span className="font-bold">36,30€</span> para particulares
+                Particulares:<span className="font-bold"> R$ 1.100 / ano</span>
               </p>
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-                e <span className="font-bold">30,25€</span> para empresas
+              Empresas: <span className="font-bold">  R$ 550 / ano</span>
               </p>
-              <p className="text-sm text-gray-600">ao ano…</p>
+              <p className="text-sm text-gray-600">Comece a economizar hoje mesmo e aproveite todos os benefícios de ser nosso associado!</p>
             </div>
             
             {/* Текст присоединения (вместо кнопки) */}

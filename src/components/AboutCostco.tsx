@@ -8,30 +8,30 @@ const AboutCostco = () => {
     mission: {
       title: "Missão e Valores",
       missionTitle: "Missão",
-      missionText: "Nossa missão é oferecer a nossos associados, a melhor qualidade em cada produto e serviço que oferecemos ao mais baixo preço possível.",
+      missionText: "Oferecer aos nossos associados a melhor qualidade em cada produto e serviço, sempre ao preço direto do fabricante, nenhum centavo a mais!",
       valuesTitle: "Valores:",
-      valuesText: "Nosso código de ética organizacional se baseia em quatro pilares principalmente:",
+      valuesText: "Nosso código de ética organizacional se baseia em quatro pilares principais:",
       pillars: [
         "Obediência à lei",
         "Cuidado com nossos associados",
-        "Cuidado com nossos empregados", 
+        "Cuidado com nossos colaboradores", 
         "Respeito aos nossos fornecedores"
       ],
-      conclusion: "Cumprindo estas quatro metas alcançaremos o objetivo final: Recompensar a nossos Associados.",
-      principlesTitle: "Nossas operações especializadas levam um rumo comum: adicionar valor a nossas afiliadas. Por isso, baseamo-nos nos seguintes princípios:",
+      conclusion: "Cumprindo esses pilares, atingimos nosso objetivo final: recompensar nossos associados.",
+      principlesTitle: "Princípios Operacionais",
       principles: [
         "A mercadoria correta",
         "No local adequado", 
-        "No momento correto",
+        "No momento certo",
         "Na condição desejada",
-        "No compromisso definitivo",
-        "Pelo melhor preço de venda"
+        "Com compromisso definitivo",
+        "O preço final que o associado paga é exatamente o mesmo praticado pelo fabricante, sem intermediários ou acréscimos"
       ]
     },
     current: {
-      title: "Atualidade en Costco",
-      statsTitle: "Número de Armazéns",
-      regionsTitle: "Armazéns por região",
+      title: "Atualidade da Costco (em 01/09/2025)",
+      statsTitle: "Número total de armazéns: 840",
+      regionsTitle: "Distribuição por região:",
       regions: [
         { name: "Número de armazéns", count: '833 (em 01/09/2022)' },
         { name: " Estados Unidos e Porto Rico", count: '625' },
@@ -39,9 +39,10 @@ const AboutCostco = () => {
         { name: "México", count: 40 },
         { name: "Japão", count: 31 },
         { name: "Reino Unido", count: 29 },
-        { name: "Coreia", count: 18 },
+        { name: "Coreia do Sul", count: 18 },
         { name: "Austrália", count: 14 },
         { name: "Taiwan", count: 14 },
+        { name: "Brasil", count: '7 (em breve)' },
         { name: "Espanha", count: 4 },
         { name: "França", count: 2 },
         { name: "Suécia", count: 2 },
@@ -58,11 +59,11 @@ const AboutCostco = () => {
         { year: "1997", label: "COSTCO WHOLESALE" }
       ],
       text: [
-        "A história de Costco Wholesale remonta a 1976, quando, sob o nome de Price Club, a companhia construiu uma loja em um hangar de aviões em New Boulevard, San Diego. Originalmente atendia a pequenos negócios, mas encontrou um nicho de mercado importante ao servir a particulares sem necessidade de ser negócios. Com esta decisão, o crescimento dos clubes de compra foi impressionante.",
-        "Em 1983, a primeira loja de Costco abriu em Seattle. Costco foi a primeira companhia a crescer desde 0 a 3.000 milhões de dólares em vendas em menos de 6 anos.",
-        "Quando Costco e Price Club se uniram em 1993, a companhia operava sob o nome de PriceCostco, já contava com 206 localizações e gerava 16.000 milhões de dólares anuais de vendas.",
-        "A estratégia de Costco sempre foi simples: manter os preços baixos e repassar as economias a nossos associados. Nossa grande base de membros e nosso poder de compra, combinado com nossa busca incansável por eficiência, resultam em melhores preços para nossos membros.",
-        "Desde a reconversão a Costco em 1997, a companhia tem crescido em todo o mundo superando os 64.000 milhões de dólares."
+        "1976 – Origem como Price Club: A companhia começou como Price Club, inaugurando sua primeira loja em um hangar de aviões em New Boulevard, San Diego. Inicialmente, atendia pequenos negócios, mas rapidamente identificou uma oportunidade de mercado ao permitir que particulares também comprassem sem a necessidade de serem empresas, impulsionando um crescimento impressionante dos clubes de compras.",
+        "1983 – Primeira loja Costco: A primeira loja Costco foi inaugurada em Seattle. A empresa se destacou por seu rápido crescimento, chegando a 3 bilhões de dólares em vendas em menos de seis anos.",
+        " 1993 – Fusão com Price Club: Quando a Costco se uniu ao Price Club, a empresa operou sob o nome PriceCostco, contando com 206 localizações e 16 bilhões de dólares em vendas anuais.",
+        " Estratégia de negócios: A filosofia da Costco sempre foi simples: manter preços baixos e repassar as economias aos associados. Sua grande base de membros e o poder de compra combinado com eficiência operacional permitem oferecer preços ainda melhores.",
+        "1997 – Reconversão para Costco: Após a mudança de nome para Costco, a companhia expandiu globalmente, alcançando mais de 64 bilhões de dólares em vendas."
       ]
     }
   };
@@ -98,12 +99,16 @@ const AboutCostco = () => {
             ))}
           </ul>
 
-          <p className="text-gray-700 mb-2">
+          <p className="text-gray-700 mb-3">
             {content.mission.conclusion}
           </p>
 
-          <p className="text-gray-700 mb-2">
+          <p className="text-xm font-bold text-gray-900 mb-2">
             {content.mission.principlesTitle}
+          </p> 
+          <p className="text-gray-700 mb-2">
+          Nossas operações seguem um rumo comum: adicionar valor às nossas afiliadas, garantindo:
+           
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             {content.mission.principles.map((principle, index) => (
@@ -154,7 +159,8 @@ const AboutCostco = () => {
       {/* História */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-left">
-          {content.history.title}
+                    História da Costco Wholesale
+
         </h2>
 
         {/* История логотипа */}

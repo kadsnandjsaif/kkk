@@ -189,7 +189,7 @@ const Header = () => {
           <div className="max-w-[1400px] mx-auto px-4">
             <nav className="flex space-x-8">
               <Link href="./" className="text-lg font-bold hover:underline transition-colors">
-                Hagase socio
+                Seja um sócio
               </Link>
               <Link href="./location" className="text-lg font-bold hover:underline transition-colors">
                 localização

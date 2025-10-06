@@ -114,7 +114,7 @@ const TestimonialSlider = () => {
   // Тексты на португальском
   const texts = {
     title: "Não Apenas Acredite na Nossa Palavra",
-    subtitle: "Histórias reais de membros reais"
+    subtitle: ""
   };
 
   // Открытие модального окна

@@ -38,11 +38,11 @@ const MembershipCTA = () => {
     <div className="bg-white py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Pronto para se Tornar um Membro da Costco?
+          Pronto para se tornar um membro da Costco?
         </h2>
         
         <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-10xl mx-auto leading-relaxed">
-          At Costco, were dedicated to providing quality products and exceptional services for our members.
+          Na Costco, somos dedicados a oferecer produtos de qualidade e serviços excepcionais aos nossos membros.
         </p>
         
         <button
