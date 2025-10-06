@@ -74,19 +74,17 @@ const  MembershipSelector = () => {
       button: 'Começa a economizar e ganhar',
       benefits: {
         collapsed: [
-             'Preços exclusivos em produtos de alta qualidade',
+            
            ' Acesso antecipado a lançamentos e eventos especiais',
 
              'Recompensas e cashback em compras selecionadas',
            'Viagens e experiências exclusivas, inclusive no exterior',
+            'Preços exclusivos em produtos de alta qualidade',
             "Ofertas e promoções especiais para membros"
 
         ],
         expanded: [
-          {
-            title: 'Preços exclusivos em produtos de alta qualidade',
-            description: 'Até $1.250 em compras elegíveis da Costco e Costco Travel. Aplicam-se Termos e Condições.'
-          },
+          
            {
             title: ' Acesso antecipado a lançamentos e eventos especiais',
             description: 'Compre em todas as lojas Costco e online em Costco.com'
@@ -98,6 +96,10 @@ const  MembershipSelector = () => {
           {
             title:'Viagens e experiências exclusivas, inclusive no exterior',
             description: 'Benefícios executivos e descontos em serviços selecionados da Costco'
+          },
+          {
+            title: 'Preços exclusivos em produtos de alta qualidade',
+            description: 'Até $1.250 em compras elegíveis da Costco e Costco Travel. Aplicam-se Termos e Condições.'
           },
          
           {
@@ -173,7 +175,7 @@ const  MembershipSelector = () => {
   // Функция для отображения иконки в правой карточке
   const renderRightCardIcon = (index: number) => {
     // Для правой карточки: первые 4 пункта - крестики, остальные - галочки
-    if (index < 4) {
+    if (index < 3) {
       return <CrossIcon />;
     } else {
       return <CheckIcon />;
