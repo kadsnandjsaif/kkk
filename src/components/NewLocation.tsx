@@ -16,20 +16,16 @@ const ComingSoonLocations = () => {
     seconds: 0
   });
 
-  const targetDate = new Date('December 25, 2025 00:00:00').getTime();
+  const targetDate = new Date('Jan 30, 2026 00:00:00').getTime();
 
   const locations: Location[] = [
-    { city: 'Rimouski, QC', date: 'Decober 2025' },
-    { city: 'The Villages, FL', date: 'Decober 2025' },
-    { city: 'N Guadalajara, MX', date: 'Decober 2025' },
-    { city: 'Richland, WA', date: 'Decober 2025' },
-    { city: 'Allen, TX', date: 'Decober 2025' },
-    { city: 'E Newmarket, ON', date: 'Decober 2025' },
-    { city: 'Spring Valley, NV', date: 'Decober 2025' },
-    { city: 'Mississauga, ON Business Center', date: 'ODecober 2025' },
-    { city: 'Frutiport, MI', date: 'ODecober 2025' },
-    { city: 'Mechanicsburg, PA', date: 'ODecober 2025' },
-    { city: 'Indian Land, SC', date: 'ODecober 2025' }
+    { city: 'São Paulo/SP e Grande ABC', date: 'Dez2025/Jan2026' },
+    { city: 'Campinas ', date: 'Dez2025/Jan2026' },
+    { city: 'Brasília ', date: 'Dez2025/Jan2026' },
+    { city: 'Rio de Janeiro', date: 'Dez2025/Jan2026' },
+    { city: 'Salvador ', date: 'Dez2025/Jan2026' },
+    { city: 'Belo Horizonte ', date: 'Dez2025/Jan2026' },
+    { city: 'Curitiba', date: 'Dez2025/Jan2026' }
   ];
 
   useEffect(() => {
