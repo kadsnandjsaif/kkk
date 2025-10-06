@@ -113,7 +113,7 @@ const  MembershipSelector = () => {
     business: {
       title: 'Assinatura Empresarial',
       subtitle: 'Valor Empresarial',
-      price: '$65/ano',
+      price: 'R$275',
       tax: 'Mais impostos aplicáveis',
       button: 'Comece a Economizar',
       benefits: {
