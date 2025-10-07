@@ -286,14 +286,14 @@ const Header = () => {
                 className="block px-4 py-3 text-[#0060a9] text-[18px] font-bold border-b border-gray-100 hover:bg-gray-50 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Hagase socio
+                Seja um sócio
               </Link>
               <Link 
                 href="/" 
                 className="block px-4 py-3 text-[#0060a9] text-[18px] font-bold hover:bg-gray-50 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Test
+                localização
               </Link>
             </div>
           </div>
