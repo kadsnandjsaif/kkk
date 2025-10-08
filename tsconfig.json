@@ -25,3 +25,5 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
+// https://docs.google.com/forms/d/e/1FAIpQLSftMzTQb4DCWYXqPqnyazuPFJZxCNc_32uQpL66nstgjLfCvQ/viewform?usp=pp_url&entry.entry.129178783=${membershipType}`;

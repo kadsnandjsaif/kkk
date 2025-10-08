@@ -365,11 +365,11 @@ const  MembershipSelector = () => {
           </div>
         </div>
       </div>
-        <EmailModal 
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSuccess={handleSuccess}
-      />
+       <EmailModal 
+  isOpen={isModalOpen}
+  onClose={() => setIsModalOpen(false)}
+  membershipType={selectedMembership}
+/>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-// components/EmailModal.tsx
 'use client';
 
 import { useState } from 'react';
@@ -6,50 +5,43 @@ import { useState } from 'react';
 interface EmailModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSuccess?: () => void;
+  membershipType: string;
 }
 
-const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, onSuccess }) => {
+const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsLoading(true);
-  setError('');
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch('/api/save-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, membershipType }),
+      });
 
-  try {
-    const response = await fetch('/api/leads', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      // Всегда показываем успех, даже если на бекенде были проблемы
-      setEmail('');
-      onSuccess?.();
-      onClose();
-      // Можно показать уведомление об успехе
-      alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-    } else {
-      setError(data.error || 'Что-то пошло не так');
+      if (response.ok) {
+        // Успешная отправка
+        setEmail('');
+        onClose();
+        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+      } else {
+        // Ошибка сервера
+        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+      }
+    } catch (error) {
+      // Ошибка сети
+      console.error('Network error:', error);
+      alert('Произошла ошибка при отправке. Пожалуйста, проверьте подключение к интернету.');
+    } finally {
+      setIsLoading(false);
     }
-  } catch (err) {
-    // Даже при ошибке сети показываем успех для пользователя
-    setEmail('');
-    onSuccess?.();
-    onClose();
-    alert('Спасибо! Ваша заявка принята.');
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
   if (!isOpen) return null;
 
@@ -92,10 +84,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, onSuccess }) =
                 placeholder="your@email.com"
               />
             </div>
-
-            {error && (
-              <div className="text-red-600 text-sm text-center">{error}</div>
-            )}
 
             <button
               type="submit"
