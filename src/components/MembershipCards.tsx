@@ -157,10 +157,10 @@ const MembershipCards = () => {
             {/* Текст с ценами */}
             <div className="mb-6">
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-               <span className="flex justify-center"> Particulares:ㅤ <p className='flex text-l'> <p className='text-decoration: line-through'>R$ 1.100</p>/550 por ano</p> </span>
+               <span className="flex justify-center"> Particulares:ㅤ R$<p className='flex text-l'> <p className='text-decoration: line-through'> 1.100</p>/550 por ano</p> </span>
               </p>
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-               <span className="flex justify-center"> Empresas:ㅤ <p className='flex text-l'> <p className='text-decoration: line-through'>R$ 550</p>/275 por ano</p> </span>
+               <span className="flex justify-center"> Empresas:ㅤ R$<p className='flex text-l'> <p className='text-decoration: line-through'> 550</p>/275 por ano</p> </span>
               </p>
               <p className="text-sm text-gray-600">Comece a economizar hoje mesmo e aproveite todos os benefícios de ser nosso associado!</p>
             </div>
