@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import EmailModal from './EmailModal';
 
 type MembershipType = 'personal' | 'business';
 
@@ -21,6 +22,21 @@ const CrossIcon = ({ color = "text-red-600" }: { color?: string }) => (
 const  MembershipSelector = () => {
   const [membershipType, setMembershipType] = useState<MembershipType>('personal');
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMembership, setSelectedMembership] = useState('');
+
+  // Функция для открытия модалки
+  const handleOpenModal = (membership: string) => {
+    setSelectedMembership(membership);
+    setIsModalOpen(true);
+  };
+
+  // Функция при успешной отправке
+  const handleSuccess = () => {
+    // Можно добавить уведомление об успехе
+    console.log(`Lead captured for: ${selectedMembership}`);
+  };
+ 
 
   // Тексты на португальском
   const texts = {
@@ -115,7 +131,7 @@ const  MembershipSelector = () => {
       subtitle: 'Valor Empresarial',
       price: 'R$275',
       tax: 'Mais impostos aplicáveis',
-      button: 'Comece a Economizar',
+      button: 'Começa a economizar e ganhar',
       benefits: {
         collapsed: [
           'Recompensa Anual de 2%',
@@ -170,6 +186,8 @@ const  MembershipSelector = () => {
     }
   };
 
+
+  
   const currentRightCard = membershipType === 'personal' ? texts.goldStar : texts.business;
 
   // Функция для отображения иконки в правой карточке
@@ -212,15 +230,18 @@ const  MembershipSelector = () => {
                   className="object-contain mb-4 md:mb-0 mr-0 md:mr-10"
                 />
                 <div className="w-[max-content] md:text-center">
-                  <div className=" text-3xl font-bold text-gray-900"><p className='flex text-xl'><p className='text-decoration: line-through'>R$ 1.100</p>ㅤpor ano por</p> {texts.executive.price}</div>
+                  <div className=" text-3xl font-bold text-gray-900"><div className='flex text-xl'> <p className='text-decoration: line-through'>R$ 1.100</p>ㅤpor ano por</div> {texts.executive.price}</div>
                   <div className="text-gray-600 text-sm">{texts.executive.tax}</div>
                 </div>
               </div>
               
               <div className="flex flex-col md:flex-row items-center justify-center">
-                <button className="w-[max-content] bg-blue-600 text-white py-3 px-3 rounded-lg font-semibold mb-6 hover:bg-blue-700 transition-colors">
-                  {texts.executive.button}
-                </button>
+                 <button 
+                onClick={() => handleOpenModal('executive')}
+                className="w-[max-content] bg-blue-600 text-white py-3 px-3 rounded-lg font-semibold mb-6 hover:bg-blue-700 transition-colors"
+              >
+                {texts.executive.button}
+              </button>
               </div>
 
               <div className={`transition-all duration-300 ${isExpanded ? 'max-h-[2000px]' : 'max-h-120'} overflow-hidden px-5`}>
@@ -271,20 +292,23 @@ const  MembershipSelector = () => {
                   className="object-contain mb-4 md:mb-0 mr-0 md:mr-10"
                 />
                 <div className="w-[max-content] md:text-center">
-                  <div className="text-3xl font-bold text-gray-900"><p className='flex text-xl'><p className='text-decoration: line-through'>R$ 550</p>ㅤpor ano por</p> {currentRightCard.price}</div>
+                  <div className="text-3xl font-bold text-gray-900"><div className='flex text-xl'><p className='text-decoration: line-through'>R$ 550</p>ㅤpor ano por</div> {currentRightCard.price}</div>
                   <div className="text-gray-600 text-sm">{currentRightCard.tax}</div>
                 </div>
               </div>
               
               <div className="flex flex-col md:flex-row items-center justify-center">
-                <button className="w-[max-content] px-3 bg-white text-blue-600 border border-blue-600 py-3 rounded-lg font-semibold mb-6 hover:bg-blue-50 transition-colors">
-                  {currentRightCard.button}
-                </button>
+              <button 
+                onClick={() => handleOpenModal(membershipType === 'personal' ? 'goldstar' : 'business')}
+                className="w-[max-content] px-3 bg-white text-blue-600 border border-blue-600 py-3 rounded-lg font-semibold mb-6 hover:bg-blue-50 transition-colors"
+              >
+                {currentRightCard.button}
+              </button>
               </div>
 
               <div className={`transition-all duration-300 ${isExpanded ? 'max-h-[2200px]' : 'max-h-140'} overflow-hidden px-5`}>
-                      <p className='text-2xl text-gray-700 font-medium '><p className='text-decoration: line-through '>Acesso Completo aos Benefícios da Costco!</p>
-                    Ao se tornar sócio, você aproveita: </p> <br />
+                      <div className='text-2xl text-gray-700 font-medium '><p className='text-decoration: line-through '>Acesso Completo aos Benefícios da Costco!</p>
+                    Ao se tornar sócio, você aproveita: </div> <br />
                 <ul className="space-y-3 mb-2">
                   {(isExpanded ? currentRightCard.benefits.expanded : currentRightCard.benefits.collapsed).map((benefit, index) => (
                     <li key={index} className="flex items-start">
@@ -341,6 +365,11 @@ const  MembershipSelector = () => {
           </div>
         </div>
       </div>
+        <EmailModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSuccess={handleSuccess}
+      />
     </div>
   );
 };
