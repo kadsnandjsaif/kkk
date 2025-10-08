@@ -24,6 +24,7 @@ const  MembershipSelector = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMembership, setSelectedMembership] = useState('');
+  
 
   // Функция для открытия модалки
   const handleOpenModal = (membership: string) => {
