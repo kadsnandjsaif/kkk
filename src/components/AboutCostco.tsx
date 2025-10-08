@@ -42,7 +42,7 @@ const AboutCostco = () => {
         { name: "Coreia do Sul", count: 18 },
         { name: "Austrália", count: 14 },
         { name: "Taiwan", count: 14 },
-        { name: "Brasil", count: '7 (em breve)' },
+        { name: "Brasil", count: '12 (em breve)' },
         { name: "Espanha", count: 4 },
         { name: "França", count: 2 },
         { name: "Suécia", count: 2 },

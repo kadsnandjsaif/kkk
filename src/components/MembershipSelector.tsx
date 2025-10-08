@@ -249,7 +249,7 @@ const  MembershipSelector = () => {
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-blue-600 font-semibold hover:underline px-5"
               >
-                {isExpanded ? 'Ocultar Detalhes' : 'Ver Detalhes dos Benefícios '}
+                {isExpanded ? 'Ocultar Detalhes' : 'Ver Detalhes dos Benefícios ✓'}
               </button>
             </div>
           </div>

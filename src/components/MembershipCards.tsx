@@ -145,7 +145,7 @@ const MembershipCards = () => {
         <div className="flex flex-col xl:flex-row gap-6 items-stretch">
           {/* Особенная карточка */}
           <div className="xl:flex-1 rounded-3xl p-4 flex flex-col items-center justify-center text-center min-h-[350px] order-1">
-            <div className="w-80 h-80 md:w-80 md:h-80 xl:w-55 xl:h-55 mb-4 relative">
+            <div className="w-80 h-80 md:w-80 md:h-80 xl:w-55 xl:h-55 mb-2 relative">
               <Image
                 src="/btcard1.png"
                 alt="Presente"
@@ -157,18 +157,15 @@ const MembershipCards = () => {
             {/* Текст с ценами */}
             <div className="mb-6">
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-                Particulares:<span className="font-bold"> R$ 1.100 / ano</span>
+               <span className="flex justify-center"> Particulares:ㅤ <p className='flex text-l'> <p className='text-decoration: line-through'>R$ 1.100</p>/550 por ano</p> </span>
               </p>
               <p className="text-1xl font-semibold text-gray-800 mb-2">
-              Empresas: <span className="font-bold">  R$ 550 / ano</span>
+               <span className="flex justify-center"> Empresas:ㅤ <p className='flex text-l'> <p className='text-decoration: line-through'>R$ 550</p>/275 por ano</p> </span>
               </p>
               <p className="text-sm text-gray-600">Comece a economizar hoje mesmo e aproveite todos os benefícios de ser nosso associado!</p>
             </div>
             
-            {/* Текст присоединения (вместо кнопки) */}
-            <div className="font-bold text-2xl text-gray-800 text-center">
-              JUNTE-SE AO NOSSO CLUBE!
-            </div>
+            
           </div>
 
           {/* Остальные 4 карточки */}
@@ -196,6 +193,10 @@ const MembershipCards = () => {
             ))}
           </div>
         </div>
+        {/* Текст присоединения (вместо кнопки) */}
+            <div className="font-bold text-2xl text-gray-800 text-center">
+              JUNTE-SE AO NOSSO CLUBE!
+            </div>
       </div>
     </div>
   );
