@@ -1,35 +1,45 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabaseClient';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const { email, membershipType } = await request.json();
-    
-    // URL для отправки данных в Google Forms
-    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSftMzTQb4DCWYXqPqnyazuPFJZxCNc_32uQpL66nstgjLfCvQ/formResponse';
-    
-    // Создаем FormData для отправки в Google Forms
-    const formData = new URLSearchParams();
-    formData.append('entry.129178783', email);
-    // Если нужно сохранять membershipType, добавьте еще одно поле в Google Forms
-    // formData.append('entry.XXXXXXX', membershipType);
+    const { 
+      encryptedEmail, 
+      encryptedMembershipType, 
+      ivEmail, 
+      ivMembership 
+    } = await request.json();
 
-    // Отправляем данные в Google Forms
-    const response = await fetch(googleFormUrl, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    // Сохраняем зашифрованные данные в Supabase
+    const { data, error } = await supabase
+      .from('leads')
+      .insert([
+        { 
+          encrypted_email: encryptedEmail,
+          encrypted_membership_type: encryptedMembershipType,
+          iv: ivEmail // сохраняем IV для email
+        }
+      ])
+      .select();
 
-    if (response.ok) {
-      return NextResponse.json({ success: true });
-    } else {
-      console.error('Google Forms error:', response.status);
-      return NextResponse.json({ error: 'Ошибка отправки в Google Forms' }, { status: 500 });
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json(
+        { error: 'Database error' },
+        { status: 500 }
+      );
     }
+
+    return NextResponse.json(
+      { success: true, data },
+      { status: 200 }
+    );
+
   } catch (error) {
-    console.error('Save lead error:', error);
-    return NextResponse.json({ error: 'Ошибка сохранения' }, { status: 500 });
+    console.error('API error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { encryptData } from '@/lib/encryption';
 
 interface EmailModalProps {
   isOpen: boolean;
@@ -13,7 +14,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Сбрасываем состояние при открытии/закрытии модалки
   useEffect(() => {
     if (!isOpen) {
       setEmail('');
@@ -22,7 +22,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType
     }
   }, [isOpen]);
 
-  // Автоматическое закрытие после успешной отправки
   useEffect(() => {
     if (isSuccess) {
       const timer = setTimeout(() => {
@@ -32,42 +31,59 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType
     }
   }, [isSuccess, onClose]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoading(true);
+  
+  try {
+    // Шифруем через API
+    const encryptResponse = await fetch('/api/encrypt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: email })
+    });
     
-    try {
-      const response = await fetch('/api/save-lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, membershipType }),
-      });
+    const encryptedEmail = await encryptResponse.json();
+    
+    const encryptResponse2 = await fetch('/api/encrypt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: membershipType })
+    });
+    
+    const encryptedMembershipType = await encryptResponse2.json();
 
-      if (response.ok) {
-        // Успешная отправка
-        setIsSuccess(true);
-        setEmail('');
-      } else {
-        // Ошибка сервера
-        alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
-      }
-    } catch (error) {
-      // Ошибка сети
-      console.error('Network error:', error);
-      alert('Ocorreu um erro ao enviar. Por favor, verifique sua conexão com a internet.');
-    } finally {
-      setIsLoading(false);
+    // Отправляем зашифрованные данные
+    const response = await fetch('/api/save-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        encryptedEmail: encryptedEmail.encryptedData,
+        encryptedMembershipType: encryptedMembershipType.encryptedData,
+        ivEmail: encryptedEmail.iv,
+        ivMembership: encryptedMembershipType.iv
+      }),
+    });
+
+    if (response.ok) {
+      setIsSuccess(true);
+      setEmail('');
+    } else {
+      alert('Ocorreu um erro ao enviar.');
     }
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Ocorreu um erro ao enviar.');
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg w-full max-w-md mx-auto">
-        {/* Заголовок */}
         <div className="flex justify-between items-center p-6 border-b">
           <h2 className="text-xl font-bold text-center flex-1">
             {isSuccess ? 'Obrigado!' : 'Deixe seu contato'}
@@ -84,7 +100,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType
           )}
         </div>
 
-        {/* Контент */}
         <div className="p-6">
           {isSuccess ? (
             <div className="text-center">
@@ -102,8 +117,6 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose, membershipType
             </div>
           ) : (
             <>
-              
-
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
