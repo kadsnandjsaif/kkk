@@ -1,6 +1,6 @@
 import { decryptData } from '@/lib/encryption';
 import { supabase } from '@/lib/supabaseClient';
-
+export const dynamic = 'force-dynamic';
 async function getLeads() {
   console.log('🟡 Fetching leads from Supabase...');
   
