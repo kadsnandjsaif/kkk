@@ -32,11 +32,6 @@ const  MembershipSelector = () => {
     setIsModalOpen(true);
   };
 
-  // Функция при успешной отправке
-  const handleSuccess = () => {
-    // Можно добавить уведомление об успехе
-    console.log(`Lead captured for: ${selectedMembership}`);
-  };
  
 
   // Тексты на португальском

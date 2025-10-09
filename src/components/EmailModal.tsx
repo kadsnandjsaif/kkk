@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { encryptData } from '@/lib/encryption';
 
 interface EmailModalProps {
   isOpen: boolean;
