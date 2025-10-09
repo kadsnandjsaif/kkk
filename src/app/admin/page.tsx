@@ -141,7 +141,7 @@ export default async function AdminPage() {
             Ошибка загрузки данных
           </h2>
           <p className="text-gray-600 text-center">
-            {error.message}
+            !!!
           </p>
           <div className="mt-6 text-center">
             <button 
