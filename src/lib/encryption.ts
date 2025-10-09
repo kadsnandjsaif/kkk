@@ -49,7 +49,6 @@ export function decryptData(encryptedData: string, iv: string) {
 
     return result;
   } catch (_error) {
-    // Используем _error чтобы показать что переменная намеренно не используется
     throw new Error('Failed to decrypt data');
   }
 }
